@@ -25,10 +25,24 @@ label {
   display: block;
 }
 
+#pieChart {
+  flex-shrink: 3;
+}
+
+#victoryPage {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+}
+
 #navBar {
   display: inline-block;
   margin: 1em;
   color: whitesmoke;
+  font-size: x-large;
+  font-weight: 300;
+  font-stretch: extra-expanded;
+  font-variant-caps: titling-caps;
 }
 
 form div {

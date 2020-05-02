@@ -1,5 +1,4 @@
 import React from 'react'
-import ThreePointVis from './ThreePointVis/ThreePointVis'
 import {Navbar} from './components'
 import Routes from './routes'
 
