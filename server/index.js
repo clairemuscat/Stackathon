@@ -10,6 +10,7 @@ const sessionStore = new SequelizeStore({db})
 const PORT = process.env.PORT || 8080
 const app = express()
 const socketio = require('socket.io')
+const Kairos = require('kairos-api')
 module.exports = app
 
 // This is a global Mocha hook, used for resource cleanup.
@@ -39,6 +40,8 @@ passport.deserializeUser(async (id, done) => {
     done(err)
   }
 })
+
+let kairos_client = new Kairos('49086789', 'fa6bc2eac8f3b1ba46263e55f00b0885')
 
 const createApp = () => {
   // logging middleware
@@ -80,6 +83,26 @@ const createApp = () => {
       next()
     }
   })
+
+  // app.post('/verify', function (req, res) {
+  //   // get base64 version of image and send that to Kairos for recognition
+  //   let payload = {image: '../burnedhairstills/ezgif-frame-042.png'}
+  //   var params = {
+  //     image: payload,
+  //     gallery_name: 'rekognize',
+  //   }
+  //   console.log('sending to Kairos for recognition')
+  //   kairos_client
+  //     .recognize(params)
+  //     .then(function (result) {
+  //       // return the response
+  //       return res.json(result.body)
+  //     })
+  //     .catch(function (err) {
+  //       console.log(err)
+  //       return res.json({status: false})
+  //     })
+  // })
 
   // sends index.html
   app.use('*', (req, res) => {

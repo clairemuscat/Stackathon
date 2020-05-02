@@ -1,5 +1,20 @@
 body {
-  font-family: sans-serif;
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 216, 255, 0.5) 10%,
+    rgba(0, 1, 127, 0.7)
+  );
+  font-family: Arial, Helvetica, Helvetica Neue, serif;
+  overflow-y: hidden;
+}
+
+.App {
+  height: 100vh;
+  position: relative;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 a {
@@ -10,9 +25,10 @@ label {
   display: block;
 }
 
-nav a {
+#navBar {
   display: inline-block;
   margin: 1em;
+  color: whitesmoke;
 }
 
 form div {

@@ -1,18 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {getEmotionsThunk} from '../store/emotionData'
+import {getImpressionsThunk} from '../store/impressions'
 
 /**
  * COMPONENT
  */
-export const UserHome = props => {
-  const {email} = props
+class UserHome extends React.Component {
+  componentDidMount() {
+    this.props.getAllEmotions()
+    this.props.getAllImpressions()
+  }
 
-  return (
-    <div>
-      <h3>Welcome, {email}</h3>
-    </div>
-  )
+  render() {
+    console.log(
+      this.props,
+      'this.props in the react component - should have the emotions there '
+    )
+    return <h1>Test</h1>
+  }
 }
 
 /**
@@ -24,7 +31,14 @@ const mapState = state => {
   }
 }
 
-export default connect(mapState)(UserHome)
+const mapDispatch = dispatch => {
+  return {
+    getAllEmotions: () => dispatch(getEmotionsThunk()),
+    getAllImpressions: () => dispatch(getImpressionsThunk())
+  }
+}
+
+export default connect(mapState, mapDispatch)(UserHome)
 
 /**
  * PROP TYPES
