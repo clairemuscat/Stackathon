@@ -7,7 +7,8 @@ body {
     rgba(0, 1, 127, 0.7)
   );
   font-family: Arial, Helvetica, Helvetica Neue, serif;
-  overflow-y: hidden;
+  color: whitesmoke;
+  text-decoration: rgba(0, 216, 255, 0.5);
 }
 
 .App {
@@ -18,11 +19,47 @@ body {
 }
 
 a {
-  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: center;
 }
 
 label {
   display: block;
+}
+
+.navvy {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  height: 100px;
+  width: 350px;
+}
+
+.image {
+  align-self: center;
+}
+
+#home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#titleFlex {
+  align-self: center;
+}
+
+#buttonFlex {
+  align-self: center;
+}
+
+#uploadFlex {
+  align-self: center;
 }
 
 #pieChart {

@@ -2,12 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {logout} from '../store'
+import {Link} from 'react-router-dom'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
-  <div>
-    <header id="navBar">Nuance</header>
+  <>
+    <div className="navvy">
+      <header id="navBar">Nuance</header>
+      <Link to="/home">Home</Link>
+    </div>
     <hr />
-  </div>
+  </>
 )
 
 /**

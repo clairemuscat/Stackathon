@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, TestKairos} from './components'
+import UserHome from './components/user-home'
 import ThreePointVis from './components/ThreePointVis'
 import {me} from './store'
 
@@ -17,10 +17,8 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/home" component={UserHome} />
         <Route path="/kairos" component={ThreePointVis} />
-        <Route component={Login} />
       </Switch>
     )
   }

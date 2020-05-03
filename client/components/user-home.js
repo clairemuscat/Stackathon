@@ -1,24 +1,23 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import {Fab} from '@material-ui/core'
 import {connect} from 'react-redux'
-import {getEmotionsThunk} from '../store/emotionData'
-import {getImpressionsThunk} from '../store/impressions'
+import ImageUploadForm from './imageForm'
 
 /**
  * COMPONENT
  */
 class UserHome extends React.Component {
-  componentDidMount() {
-    this.props.getAllEmotions()
-    this.props.getAllImpressions()
-  }
-
   render() {
     console.log(
       this.props,
       'this.props in the react component - should have the emotions there '
     )
-    return <h1>Test</h1>
+    return (
+      <div id="home">
+        <h1 id="titleFlex">Enter Video</h1>
+        <ImageUploadForm id="uploadFlex" />
+      </div>
+    )
   }
 }
 
@@ -31,18 +30,8 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    getAllEmotions: () => dispatch(getEmotionsThunk()),
-    getAllImpressions: () => dispatch(getImpressionsThunk())
-  }
-}
-
-export default connect(mapState, mapDispatch)(UserHome)
+export default connect(mapState, null)(UserHome)
 
 /**
  * PROP TYPES
  */
-UserHome.propTypes = {
-  email: PropTypes.string
-}
