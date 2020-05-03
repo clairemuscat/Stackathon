@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
 body {
   position: relative;
   height: 100vh;
@@ -6,9 +8,57 @@ body {
     rgba(0, 216, 255, 0.5) 10%,
     rgba(0, 1, 127, 0.7)
   );
-  font-family: Arial, Helvetica, Helvetica Neue, serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-shadow: rgba(0, 1, 127, 0.7);
   color: whitesmoke;
   text-decoration: rgba(0, 216, 255, 0.5);
+}
+
+.bg {
+  animation: slide 15s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgb(112, 148, 248) 50%,
+    rgb(182, 217, 240) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 15s;
+}
+
+.bg3 {
+  animation-duration: 15s;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  left: 50%;
+  padding: 10vmin;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
 }
 
 .App {
@@ -19,9 +69,13 @@ body {
 }
 
 a {
-  color: whitesmoke;
-  font-weight: 300;
-  font-family: Arial, Helvetica, sans-serif;
+  align-self: center;
+  border: 2px solid #6385dd;
+  background-color: #6385dd;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 8px 8px #99bdff;
   align-self: center;
 }
 
@@ -32,11 +86,6 @@ label {
 .navvy {
   display: flex;
   justify-content: space-between;
-}
-
-input {
-  height: 100px;
-  width: 350px;
 }
 
 .image {
@@ -52,10 +101,39 @@ input {
 
 #titleFlex {
   align-self: center;
+  border: 2px solid #6385dd;
+  background-color: #6385dd;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 8px 8px #99bdff;
 }
 
-#buttonFlex {
-  align-self: center;
+.button-3 {
+  border: 2px solid #6385dd;
+  background-color: #6385dd;
+  border-radius: 20px;
+  color: #fff;
+  transition: 0.3s;
+}
+.button-3:hover {
+  box-shadow: 8px 8px #99bdff;
+  transition: 0.3s;
+}
+
+input {
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  border: 2px solid #6385dd;
+  border-radius: 5px;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+input:hover {
+  box-shadow: 8px 8px #99bdff;
+  transition: 0.3s;
 }
 
 #uploadFlex {
@@ -66,6 +144,11 @@ input {
   flex-shrink: 3;
 }
 
+VictoryContainer {
+  height: 200px;
+  width: 200px;
+}
+
 #victoryPage {
   display: flex;
   flex-flow: row;
@@ -73,13 +156,22 @@ input {
 }
 
 #navBar {
-  display: inline-block;
-  margin: 1em;
-  color: whitesmoke;
-  font-size: x-large;
-  font-weight: 300;
-  font-stretch: extra-expanded;
-  font-variant-caps: titling-caps;
+  border: 2px solid #6385dd;
+  background-color: #6385dd;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 8px 8px #99bdff;
+}
+
+#analyticsTitle {
+  align-self: center;
+  border: 2px solid #6385dd;
+  background-color: #6385dd;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 8px 8px #99bdff;
 }
 
 form div {

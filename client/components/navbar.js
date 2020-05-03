@@ -7,8 +7,9 @@ import {Link} from 'react-router-dom'
 const Navbar = ({handleClick, isLoggedIn}) => (
   <>
     <div className="navvy">
-      <header id="navBar">Nuance</header>
+      <h1 id="navBar">Nuance</h1>
       <Link to="/home">Home</Link>
+      <Link to="/kairos">Statistics</Link>
     </div>
     <hr />
   </>

@@ -63,9 +63,10 @@ export class ThreePointVis extends React.Component {
     console.log(impAverages)
     return (
       <>
-        <h1>Analytics</h1>
+        <h1 id="analyticsTitle">Analytics</h1>
         <div id="victoryPage">
           <VictoryPie
+            theme={VictoryTheme.material}
             id="pieChart"
             padding={1}
             radius={50}

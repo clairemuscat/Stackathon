@@ -18,7 +18,7 @@ class ImageUploadForm extends React.Component {
     return (
       <form className="image" onSubmit={this.handleSubmit}>
         <input placeholder="enter url here" name="url" />
-        <button id="buttonFlex" type="submit">
+        <button className="button-3" type="submit">
           {' '}
           Get Analysis{' '}
         </button>
