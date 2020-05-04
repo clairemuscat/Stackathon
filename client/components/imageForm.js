@@ -11,8 +11,11 @@ class ImageUploadForm extends React.Component {
     event.preventDefault()
     let urlObj = {}
     urlObj.url = event.target.url.value
-    await axios.post('/api', urlObj)
-    window.location.href = '/kairos'
+    try {
+      await axios.post('/api', urlObj)
+    } catch (err) {
+      alert('There was an issue analyzing your media')
+    }
   }
   render() {
     return (

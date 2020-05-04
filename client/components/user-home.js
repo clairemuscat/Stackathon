@@ -14,7 +14,7 @@ class UserHome extends React.Component {
     )
     return (
       <div id="home">
-        <h1 id="titleFlex">Enter Video</h1>
+        <h1 id="titleFlex">Enter URL</h1>
         <ImageUploadForm id="uploadFlex" />
       </div>
     )

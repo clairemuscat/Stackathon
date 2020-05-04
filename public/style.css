@@ -142,9 +142,6 @@ input:hover {
 
 #pieChart {
   flex-shrink: 3;
-}
-
-VictoryContainer {
   height: 200px;
   width: 200px;
 }
@@ -155,17 +152,18 @@ VictoryContainer {
   align-items: flex-start;
 }
 
-#navBar {
+#impLabel {
+  align-self: flex-start;
   border: 2px solid #6385dd;
   background-color: #6385dd;
   border-radius: 20px;
   padding: 10px;
   color: #fff;
   box-shadow: 8px 8px #99bdff;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
-#analyticsTitle {
-  align-self: center;
+#navBar {
   border: 2px solid #6385dd;
   background-color: #6385dd;
   border-radius: 20px;

@@ -8,8 +8,9 @@ import {
   VictoryAxis,
   VictoryTheme,
   VictoryStack,
-  VictoryZoomContainer,
-  VictoryPie
+  VictoryLabel,
+  VictoryPie,
+  VictoryBrushContainer
 } from 'victory'
 
 export class ThreePointVis extends React.Component {
@@ -59,33 +60,44 @@ export class ThreePointVis extends React.Component {
     let neutral =
       impressions.reduce((accum, val) => accum + parseFloat(val.neutral), 0) /
       impressions.length
-    let impAverages = [{negative}, {positive}, {neutral}]
-    console.log(impAverages)
+
     return (
       <>
-        <h1 id="analyticsTitle">Analytics</h1>
         <div id="victoryPage">
           <VictoryPie
             theme={VictoryTheme.material}
             id="pieChart"
             padding={1}
             radius={50}
-            colorScale={['tomato', 'gold', 'navy']}
+            colorScale={['grey', 'white', 'navy']}
             data={[
               {x: 'Neutral', y: neutral},
               {x: 'Positive', y: positive},
               {x: 'Negative', y: negative}
             ]}
           />
+          <VictoryLabel
+            x={200}
+            y={200}
+            style={{fontSize: 30}}
+            text="Emotions & Impressions"
+            id="impLabel"
+          />
           {this.props.emotions ? (
             <VictoryChart
               domainPadding={10}
               id="victory"
-              style={{parent: {maxWidth: '50%'}}}
+              style={{parent: {maxWidth: '50%'}, data: {stroke: 'teal'}}}
               width={600}
               height={500}
               theme={VictoryTheme.material}
-              containerComponent={<VictoryZoomContainer />}
+              containerComponent={
+                <VictoryBrushContainer
+                  brushDomain={{x: [1, 7], y: [-3, 3]}}
+                  brushDimension="y"
+                  brushStyle={{fill: 'teal', opacity: 0.2}}
+                />
+              }
             >
               <VictoryAxis
                 tickValues={[
