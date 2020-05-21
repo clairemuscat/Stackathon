@@ -1,18 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import {Fab} from '@material-ui/core'
 import {connect} from 'react-redux'
+import ImageUploadForm from './imageForm'
 
 /**
  * COMPONENT
  */
-export const UserHome = props => {
-  const {email} = props
-
-  return (
-    <div>
-      <h3>Welcome, {email}</h3>
-    </div>
-  )
+class UserHome extends React.Component {
+  render() {
+    console.log(
+      this.props,
+      'this.props in the react component - should have the emotions there '
+    )
+    return (
+      <div id="home">
+        <h1 id="titleFlex">Enter URL</h1>
+        <ImageUploadForm id="uploadFlex" />
+      </div>
+    )
+  }
 }
 
 /**
@@ -24,11 +30,8 @@ const mapState = state => {
   }
 }
 
-export default connect(mapState)(UserHome)
+export default connect(mapState, null)(UserHome)
 
 /**
  * PROP TYPES
  */
-UserHome.propTypes = {
-  email: PropTypes.string
-}
